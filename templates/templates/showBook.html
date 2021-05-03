@@ -1,0 +1,37 @@
+<html lang="en">
+{% extends "templates/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+    <div class="jumbotron text-center" style="margin-top:20px;">
+    <h3 style="text-align: center;color:darkgreen">Show All Books</h3>
+    <div class="form-group"><a href="/addBook" class="btn btn-info" style="margin-left: -920px">Add Book</a></div>
+        <table class="table table-hover table-hover">
+            <thead class="table tableSubHeadingColor">
+            <th scope="col">ID</th>
+            <th scope="col">BOOK NAME</th>
+            <th scope="col">AUTHOR</th>
+            <th scope="col">LAST UPDATE</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            </thead>
+            <tbody>
+            <tr>
+                {% for book in show %}
+                    <td>{{ book.Id }}</td>
+                    <td>{{ book.Book_Name }}</td>
+                    <td>{{ book.Volume }}</td>
+                    <td>{{ book.Update }}</td>
+                    <td><a href="/updateBook/{{ book.Id }}/" class="btn btn-info">Update</a></td>
+                    <td><a href="/deleteBook/{{ book.Id }}/" class="btn btn-danger">Delete</a></td>
+            </tr>
+             {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+{% endblock %}
+
+</html>

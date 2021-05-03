@@ -1,0 +1,16 @@
+<html lang="en">
+{% extends "templates/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron text-center" style="margin-top:20px;margin-left: 200px;margin-right:200px;">
+        <form method="POST">
+            <h3 class="form-group" style="color:darkgreen">Add Book</h3>
+        {{ bookData.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary form-group">
+        </form>
+    </div>
+</div>
+{% endblock %}
+</html>

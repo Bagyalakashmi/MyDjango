@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'templates/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron" style="margin-left:350px;margin-right:350px;margin-top:20px;">
+             <h4 class="form-group" style="text-align:center;color:darkgreen">Update Student Details</h4>
+            <form method="POST">
+                <label class="form-group">ID&nbsp;<input class="form-control" type="text" name="Id" value="{{ update.Id }}" readonly></label><br>
+                <label class="form-group">Student Name<input class="form-control" type="text" name="Name" value="{{ update.Name }}"></label><br>
+                <label class="form-group">Student Roll&nbsp;<input class="form-control" type="text" name="Roll" value="{{ update.Roll }}"></label><br>
+                <label class="form-group">Dob&nbsp;<input class="form-control" type="date" name="Dob" value="{{ update.Dob }}" required></label><br>
+                <label class="form-group">Class&nbsp;<input  class="form-control" type="text" name="Class" value="{{ update.Class }}"></label><br>
+                <label class="form-group">Email&nbsp;<input class="form-control" type="email" name="Email" value="{{ update.Email }}"></label><br>
+                <label class="form-group">Department&nbsp;<input class="form-control"  type="text" name="Department" value="{{ update.Department }}"></label><br>
+                <label class="form-group">Phone&nbsp;<input class="form-control" type="text" name="Phone" value="{{ update.Phone }}"></label><br>
+                <label class="form-group">Member&nbsp;<input type="checkbox" name="is_member" value="{{ update.is_member }}"}></label><br>
+                <label class="form-group">Account Created&nbsp;<input class="form-control" type="text" name="Created" value="{{ update.Created }}" readonly></label><br>
+                {% csrf_token %}
+                <input class="form-group btn btn-primary btn-lg" type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+</html>

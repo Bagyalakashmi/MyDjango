@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% extends 'templates/base.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron" style="margin-left:-150px;margin-right:-150px">
+         <h3 style="text-align:center;color:darkgreen">Student Details</h3>
+            <a href="/add"><button type="button" class="btn btn-primary btn-lg">Add New Student</button></a><hr>
+    <table border="1" class="table table-border table-hover" style="background-color:lightskyblue">
+        <thead class="table tableSubHeadingColor" style="background-color:lightpink">
+        <th scope="col">ID</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Student Roll</th>
+        <th scope="col">Student Class</th>
+        <th scope="col">Student Department</th>
+        <th scope="col">Student Email</th>
+        <th scope="col">Student Phone</th>
+        <th scope="col">Account Created Date</th>
+        <th scope="col">Member</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+        </thead>
+    <tbody>
+    <tr>
+        {% for st in display %}
+            <td>{{ st.Id }}</td>
+            <td>{{ st.Name }}</td>
+            <td>{{ st.Roll}}</td>
+            <td>{{ st.Class }}</td>
+            <td>{{ st.Department }}</td>
+            <td>{{ st.Email }}</td>
+            <td>{{ st.Phone }}</td>
+            <td>{{ st.Created }}</td>
+            <td>{{ st.is_member }}</td>
+            <td><a href="/update/{{ st.Id }}/"><input type="button" class="btn btn-info" value="Update"></a></td>
+            <td><a href="/delete/{{ st.Id }}/"><input type="button" class="btn btn-danger" value="Delete"></a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+</html>

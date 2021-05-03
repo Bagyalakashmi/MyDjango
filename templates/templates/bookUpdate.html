@@ -1,0 +1,20 @@
+<html lang="en">
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron" style="margin-left: 450px;margin-right:300px; margin-top: 20px;">
+            <h3 class="form-group text-center" style="color:darkgreen">Update Book</h3>
+            <form method="POST">
+                <label class="form-group">ID<input type="text" class="form-control" name="Id" value="{{ update.Id }}" disabled></label><br>
+                <label class="form-group">BOOK NAME<input type="text" class="form-control" name="Book_Name" value="{{ update.Book_Name }}"></label><br>
+                <label class="form-group">AUTHOR<input type="text" class="form-control" name="Author" value="{{ update.Author }}"></label><br>
+                <label class="form-group">VOLUME<input type="text" class="form-control"  name="Volume" value="{{ update.Volume }}"></label><br>
+                <label class="form-group">LAST UPDATE<input type="date" class="form-control" name="Update" value="{{ update.Update }}"></label><br>
+                {% csrf_token %}
+                <input type="submit" value="Update Book" class="btn btn-primary btn-lg form-group">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+</html>

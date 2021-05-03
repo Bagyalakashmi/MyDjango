@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen">
+{#    <link rel="stylesheet" href="{% static 'css/blog.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/addBook.css' %}">#}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+
+
+        /* Modify the background color */
+
+        .navbar-custom {
+            background-color:#b4dcf0;
+        }
+        /* Modify brand and text color */
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: green;
+        }
+    </style>
+</head>
+<body style="background-color:lightslategray">
+<nav  class="navbar navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">LIBRARY MANAGEMENT SYSTEM</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/add">Register</a></li>
+            <li><a href="/display">All Student</a></li>
+            <li><a href="/addBook">Add Book</a></li>
+            <li><a href="/showBook">Show Book</a></li>
+            <li><a href="#">Add Member</a></li>
+        </ul>
+    </div>
+</nav>
+{% block content %}
+
+
+{% endblock %}
+</body>
+</html>
